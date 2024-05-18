@@ -171,19 +171,8 @@ def main(**kwargs):
         engine.test(model, save_path_resume, device, dataloader, scaler, model_name, save=False, _max=_max, _min=_min, loss=engine.loss, dataset_name=dataset_name)
 
 if __name__ == '__main__':
-    # t_start = time.time()
-    # main()
-    # t_end   = time.time()
-    # print("Total time spent: {0}".format(t_end - t_start))
-    #
-    # import torch
-
-    print(f"PyTorch version: {torch.__version__}")  # Should not include '+cpu'
-    print(f"CUDA version: {torch.version.cuda}")  # Should return the CUDA version
-    print(f"cuDNN version: {torch.backends.cudnn.version()}")  # Should return the cuDNN version
-    print(f"Is CUDA available: {torch.cuda.is_available()}")  # Should return True
-
-    if torch.cuda.is_available():
-        print(f"Current CUDA device: {torch.cuda.current_device()}")  # Should return the current CUDA device id
-        print(f"CUDA device name: {torch.cuda.get_device_name(0)}")  # Should return the name of your GPU
+    t_start = time.time()
+    main()
+    t_end   = time.time()
+    print("Total time spent: {0}".format(t_end - t_start))
 
